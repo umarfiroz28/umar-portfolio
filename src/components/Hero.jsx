@@ -95,7 +95,7 @@ export default function Hero() {
           className="text-lg sm:text-xl text-neutral-400 font-light tracking-wide mb-6"
         >
           {PERSONAL.headline}{" "}
-          <span className="text-neutral-500">—</span>{" "}
+          {/* <span className="text-neutral-500">—</span>{" "} */}
           <span className="text-neutral-300">{PERSONAL.tagline}</span>
         </motion.p>
 

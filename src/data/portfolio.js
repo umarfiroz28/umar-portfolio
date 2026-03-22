@@ -4,7 +4,7 @@
 export const PERSONAL = {
   name: "Umar Firoz",
   headline: "Software Engineer — Java, Spring Boot, Microservices, AWS",
-  tagline: "I Build Backend Systems",
+  // tagline: "I Build Backend Systems",
   intro:
     "Software Engineer at IBM with 3+ years shipping Java microservices, event-driven architectures, and cloud-native platforms that serve 10,000+ enterprise users. I work across the full stack — Spring Boot and Kafka on the backend, React and Next.js on the frontend — and I've recently been building GenAI-powered developer tools. I like systems that are boring in production and interesting in design.",
   email: "iiuumar28@gmail.com",
