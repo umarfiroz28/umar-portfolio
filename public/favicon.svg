@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Dark background with subtle rounded square -->
+  <rect width="64" height="64" rx="16" fill="#0A0A0A"/>
+
+  <!-- Subtle cyan glow behind the letter -->
+  <ellipse cx="32" cy="34" rx="18" ry="16" fill="url(#glow)" opacity="0.35"/>
+
+  <!-- Letter U — clean, geometric, modern -->
+  <path d="M20 18v18c0 8.837 5.373 14 12 14s12-5.163 12-14V18"
+        stroke="url(#gradient)"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Accent dot — small cyan circle for the "period" brand mark -->
+  <circle cx="48" cy="18" r="3" fill="#06B6D4"/>
+
+  <defs>
+    <linearGradient id="gradient" x1="20" y1="18" x2="44" y2="50">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
