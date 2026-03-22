@@ -23,8 +23,8 @@ export const CREDENTIALS = [
   { label: "Experience", value: "3+ Years" },
   { label: "Current", value: "IBM India" },
   { label: "Scale", value: "10,000+ Users" },
-  { label: "GATE Rank", value: "#346" },
-  { label: "AWS", value: "Certified" },
+  { label: "Leetcode", value: "1600" },
+  { label: "Codeforces", value: "1100" },
 ];
 
 export const ABOUT = {
