@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ABOUT, EDUCATION } from "../data/portfolio";
+import { Building2 } from "lucide-react";
+import { ABOUT, EDUCATION, EXPERIENCE } from "../data/portfolio";
 
 export default function About() {
   return (
@@ -33,6 +34,32 @@ export default function About() {
             </motion.p>
           ))}
         </div>
+
+        {/* Experience strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-12 flex flex-wrap gap-3"
+        >
+          {EXPERIENCE.map((exp) => (
+            <div
+              key={exp.company}
+              className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-cyan-500/15 transition-all duration-500"
+            >
+              <Building2 size={15} className="text-cyan-400/60 flex-shrink-0" />
+              <div>
+                <p className="text-sm text-white font-medium leading-tight">
+                  {exp.role}
+                </p>
+                <p className="text-xs text-neutral-500 leading-tight mt-0.5">
+                  {exp.company} · {exp.period}
+                </p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
 
         {/* Education card */}
         <motion.div
