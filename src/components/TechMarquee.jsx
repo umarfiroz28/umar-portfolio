@@ -13,8 +13,8 @@ function SkillTile({ label, index }) {
     <div
       className={`marquee-tile grid h-[150px] w-[260px] shrink-0 place-items-center rounded-2xl border px-8 text-center shadow-[0_22px_60px_rgba(37,99,235,0.08)] backdrop-blur-sm sm:h-[190px] sm:w-[330px] md:h-[220px] md:w-[380px] ${
         featured
-          ? "border-[#F59E0B]/30 bg-[#FFFBEB]/80"
-          : "border-[#D8E2F0] bg-white/70"
+          ? "border-amber-300/32 bg-amber-300/10"
+          : "border-sky-300/20 bg-[#08213A]/72"
       }`}
       style={{
         transform: `rotateY(${index % 2 === 0 ? -10 : 10}deg) rotateX(6deg)`,
@@ -22,11 +22,11 @@ function SkillTile({ label, index }) {
     >
       <div>
         {featured && (
-          <span className="mb-4 inline-block rounded-full border border-[#FFD166]/30 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.3em] text-[#FFD166]">
+          <span className="mb-4 inline-block rounded-full border border-amber-300/30 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.3em] text-amber-200">
             Highlight
           </span>
         )}
-        <span className="block text-2xl font-black uppercase tracking-wider text-[#142033] md:text-4xl">
+        <span className="block text-2xl font-black uppercase tracking-normal text-sky-50 sm:tracking-wider md:text-4xl">
           {label}
         </span>
       </div>
@@ -55,7 +55,7 @@ export default function TechMarquee() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#F7FAFF] pt-20 pb-10 sm:pt-24 md:pt-28"
+      className="relative overflow-hidden bg-[#061729] pb-10 pt-14 sm:pt-24 md:pt-28"
       style={{ perspective: "1100px" }}
     >
       <div

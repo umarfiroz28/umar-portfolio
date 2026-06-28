@@ -12,12 +12,12 @@
   html,
   body,
   #root {
-    background: #f7faff;
+    background: #061729;
     font-family: "Kanit", sans-serif;
   }
 
   body {
-    color: #142033;
+    color: #eaf6ff;
   }
 
   ::-webkit-scrollbar {
@@ -25,18 +25,18 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f7faff;
+    background: #061729;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(37, 99, 235, 0.22);
+    background: rgba(56, 189, 248, 0.45);
     border-radius: 999px;
   }
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.18);
-  color: #142033;
+  background: rgba(56, 189, 248, 0.28);
+  color: #f8fcff;
 }
 
 .hero-heading {
@@ -63,7 +63,7 @@
 }
 
 .hero-ribbon {
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
 }
 
 @keyframes hero-gradient-shift {
@@ -99,9 +99,9 @@
   pointer-events: none;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.76),
+    rgba(255, 255, 255, 0.16),
     transparent 38%,
-    rgba(37, 99, 235, 0.05)
+    rgba(56, 189, 248, 0.12)
   );
 }
 
@@ -154,22 +154,22 @@
 .contact-input {
   width: 100%;
   border-radius: 22px;
-  border: 1px solid #d8e2f0;
-  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  background: rgba(8, 27, 48, 0.82);
   padding: 0.95rem 1rem;
-  color: #142033;
+  color: #eaf6ff;
   outline: none;
   transition: border-color 220ms ease, box-shadow 220ms ease,
     background 220ms ease;
 }
 
 .contact-input::placeholder {
-  color: rgba(71, 85, 105, 0.48);
+  color: rgba(186, 230, 253, 0.46);
 }
 
 .contact-input:focus {
-  border-color: rgba(37, 99, 235, 0.7);
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
-    0 16px 46px rgba(37, 99, 235, 0.12);
+  border-color: rgba(56, 189, 248, 0.75);
+  background: rgba(9, 34, 60, 0.96);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12),
+    0 16px 46px rgba(14, 165, 233, 0.16);
 }

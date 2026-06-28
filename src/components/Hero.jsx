@@ -7,18 +7,18 @@ import { HERO_BADGES, PERSONAL } from "../data/portfolio";
 
 export default function Hero() {
   const ribbons = [
-    "left-[-8%] top-[20%] w-[42%] rotate-[-18deg] from-[#60A5FA] via-[#99F6E4] to-transparent",
-    "right-[-10%] top-[28%] w-[46%] rotate-[16deg] from-[#A7F3D0] via-[#FDE68A] to-transparent",
-    "left-[20%] bottom-[10%] w-[34%] rotate-[8deg] from-[#BFDBFE] via-[#5EEAD4] to-transparent",
+    "left-[-20%] top-[18%] w-[70%] rotate-[-18deg] from-sky-500 via-cyan-300 to-transparent sm:left-[-8%] sm:w-[42%]",
+    "right-[-22%] top-[32%] w-[76%] rotate-[16deg] from-teal-300 via-blue-300 to-transparent sm:right-[-10%] sm:w-[46%]",
+    "left-[8%] bottom-[10%] w-[62%] rotate-[8deg] from-sky-300 via-cyan-300 to-transparent sm:left-[20%] sm:w-[34%]",
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#F7FAFF]">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#061729]">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(37,99,235,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.07) 1px, transparent 1px)",
+            "linear-gradient(rgba(125,211,252,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(125,211,252,0.08) 1px, transparent 1px)",
           backgroundSize: "72px 72px",
           maskImage:
             "linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%)",
@@ -26,7 +26,7 @@ export default function Hero() {
       />
 
       <motion.div
-        className="absolute inset-0 z-0 opacity-30 mix-blend-multiply"
+        className="absolute inset-0 z-0 opacity-55 mix-blend-screen"
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 0.3, scale: 1 }}
         transition={{ delay: 0.35, duration: 1 }}
@@ -55,10 +55,10 @@ export default function Hero() {
         ))}
       </div>
 
-      <div className="relative z-20 mx-auto flex min-h-screen max-w-7xl flex-col px-6 pb-8 pt-20 md:px-10 md:pb-10 md:pt-24">
+      <div className="relative z-20 mx-auto flex min-h-[100svh] max-w-7xl flex-col px-4 pb-8 pt-20 sm:px-6 md:px-10 md:pb-10 md:pt-24">
         <FadeIn delay={0.15} y={36} className="overflow-hidden">
           <motion.h1
-            className="whitespace-nowrap text-center font-black uppercase leading-none tracking-tight text-[#122033] [font-size:clamp(4.2rem,10vw,10.5rem)]"
+            className="mx-auto max-w-[11ch] text-center font-black uppercase leading-[0.9] tracking-normal text-sky-50 [font-size:clamp(3rem,16vw,10.5rem)] sm:max-w-none"
             animate={{ letterSpacing: ["0em", "0.015em", "0em"] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -66,11 +66,11 @@ export default function Hero() {
           </motion.h1>
         </FadeIn>
 
-        <div className="flex flex-1 items-center justify-center py-6">
+        <div className="flex flex-1 items-center justify-center py-6 sm:py-8">
           <FadeIn delay={0.28} y={24}>
             <div className="mx-auto max-w-3xl text-center">
               <motion.div
-                className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#D8E2F0] bg-white/80 px-4 py-2 text-left text-[#1E293B] shadow-[0_16px_50px_rgba(37,99,235,0.1)] backdrop-blur-md"
+                className="mb-6 inline-flex max-w-full items-center gap-3 rounded-full border border-sky-300/22 bg-[#08213A]/82 px-4 py-2 text-left text-sky-50 shadow-[0_16px_50px_rgba(14,165,233,0.18)] backdrop-blur-md"
                 animate={{
                   y: [0, -6, 0],
                   boxShadow: [
@@ -84,30 +84,30 @@ export default function Hero() {
                 <span className="grid h-8 w-8 place-items-center rounded-full bg-[#DBEAFE] text-[#1D4ED8] shadow-[0_0_26px_rgba(37,99,235,0.18)]">
                   <BriefcaseBusiness size={16} />
                 </span>
-                <span className="text-xs font-medium uppercase tracking-[0.24em] sm:text-sm">
+                <span className="text-xs font-medium uppercase tracking-[0.16em] sm:text-sm sm:tracking-[0.24em]">
                   {PERSONAL.currentRole}
                 </span>
               </motion.div>
 
-              <p className="mx-auto max-w-[780px] text-xl font-medium leading-tight tracking-normal text-[#334155] sm:text-2xl md:text-3xl">
+              <p className="mx-auto max-w-[780px] text-lg font-medium leading-tight tracking-normal text-sky-100/82 sm:text-2xl md:text-3xl">
                 Frontend-first software engineer building precise interfaces,
                 dependable Java backends, and Golang microservices that feel
                 fast, clear, and trustworthy.
               </p>
 
-              <div className="mx-auto mt-7 grid max-w-3xl grid-cols-2 gap-3 md:grid-cols-4">
+              <div className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-4">
                 {HERO_BADGES.map((badge, index) => (
                   <motion.div
                     key={badge.label}
-                    className="hero-orbit-badge relative rounded-2xl border border-[#D8E2F0] bg-white/78 p-4 text-left shadow-[0_18px_44px_rgba(37,99,235,0.08)] backdrop-blur-md"
+                    className="hero-orbit-badge relative rounded-2xl border border-sky-300/22 bg-[#08213A]/78 p-4 text-left shadow-[0_18px_44px_rgba(14,165,233,0.16)] backdrop-blur-md"
                     initial={{ opacity: 0, y: 18 }}
                     animate={{
                       opacity: 1,
                       y: [0, index % 2 ? -7 : 7, 0],
                       borderColor: [
-                        "rgba(216,226,240,1)",
+                        "rgba(125,211,252,0.24)",
                         `${badge.tone}88`,
-                        "rgba(216,226,240,1)",
+                        "rgba(125,211,252,0.24)",
                       ],
                     }}
                     transition={{
@@ -133,11 +133,11 @@ export default function Hero() {
                         className="h-2.5 w-2.5 rounded-full shadow-[0_0_22px_var(--badge-tone)]"
                         style={{ background: badge.tone }}
                       />
-                      <span className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#64748B]">
+                      <span className="text-[9px] font-semibold uppercase tracking-[0.26em] text-sky-200/60">
                         Core
                       </span>
                     </div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#64748B]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-200/60">
                       {badge.label}
                     </p>
                     <p
@@ -167,7 +167,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="grid h-11 w-11 place-items-center rounded-full border border-[#D8E2F0] bg-white/80 text-[#334155] shadow-[0_12px_30px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-[#2563EB] hover:text-[#2563EB]"
+                    className="grid h-11 w-11 place-items-center rounded-full border border-sky-300/22 bg-[#08213A]/80 text-sky-100 shadow-[0_12px_30px_rgba(14,165,233,0.14)] transition hover:-translate-y-1 hover:border-sky-300 hover:text-sky-300"
                   >
                     <Icon size={17} />
                   </a>
@@ -181,7 +181,7 @@ export default function Hero() {
           <a
             href="#about"
             aria-label="Scroll to about"
-            className="grid h-11 w-11 place-items-center rounded-full border border-[#D8E2F0] bg-white/80 text-[#334155] shadow-[0_12px_30px_rgba(37,99,235,0.08)] transition hover:-translate-y-1 hover:border-[#2563EB] hover:text-[#2563EB]"
+            className="grid h-11 w-11 place-items-center rounded-full border border-sky-300/22 bg-[#08213A]/80 text-sky-100 shadow-[0_12px_30px_rgba(14,165,233,0.14)] transition hover:-translate-y-1 hover:border-sky-300 hover:text-sky-300"
           >
             <ArrowDown size={18} />
           </a>

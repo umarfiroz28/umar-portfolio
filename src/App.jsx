@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 export default function App() {
   return (
     <div
-      className="min-h-screen bg-[#F7FAFF] text-[#142033] antialiased"
+      className="min-h-screen bg-[#061729] text-[#EAF6FF] antialiased"
       style={{ overflowX: "clip" }}
     >
       <Navbar />
