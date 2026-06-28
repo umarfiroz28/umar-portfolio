@@ -2,44 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Base ──────────────────────────────────────────────────────── */
-
 @layer base {
-  * {
-    @apply border-neutral-800;
-  }
-
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
-    @apply bg-black text-white;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif;
+  html,
+  body,
+  #root {
+    background: #f7faff;
+    font-family: "Kanit", sans-serif;
   }
 
-  /* Subtle scrollbar */
+  body {
+    color: #142033;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
   }
+
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #f7faff;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(37, 99, 235, 0.22);
+    border-radius: 999px;
   }
 }
 
-/* ─── Selection ─────────────────────────────────────────────────── */
-
 ::selection {
-  background: rgba(6, 182, 212, 0.25);
-  color: white;
+  background: rgba(37, 99, 235, 0.18);
+  color: #142033;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-heading-bright {
+  background: linear-gradient(
+    100deg,
+    #d7e2ea 0%,
+    #00f5ff 28%,
+    #ff2ea6 55%,
+    #ffd166 78%,
+    #d7e2ea 100%
+  );
+  background-size: 180% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hero-gradient-shift 7s ease-in-out infinite;
+}
+
+.hero-ribbon {
+  mix-blend-mode: multiply;
+}
+
+@keyframes hero-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-3d-card,
+.hero-orbit-badge,
+.marquee-tile,
+.about-stat,
+.service-row,
+.project-panel,
+.spotlight-card,
+.contact-stage {
+  transform-style: preserve-3d;
+}
+
+.hero-3d-card::before,
+.hero-orbit-badge::before,
+.marquee-tile::before,
+.spotlight-card::before,
+.project-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.76),
+    transparent 38%,
+    rgba(37, 99, 235, 0.05)
+  );
+}
+
+.hero-orbit-badge::after,
+.spotlight-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--badge-tone, rgba(215, 226, 234, 0.35)), transparent);
+  opacity: 0.45;
+}
+
+.hero-orbit-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-orbit-badge p,
+.hero-3d-card p {
+  overflow-wrap: anywhere;
+}
+
+.marquee-tile {
+  position: relative;
+  transition: transform 350ms ease, border-color 350ms ease, background 350ms ease;
+}
+
+.marquee-tile:hover {
+  transform: rotateY(0deg) rotateX(0deg) translateZ(34px) scale(1.03) !important;
+}
+
+.spotlight-card {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.spotlight-card:hover {
+  transform: translateY(-12px) rotateX(5deg) rotateY(-4deg);
+}
+
+.service-row {
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.service-row:hover {
+  transform: translateZ(22px) rotateX(1deg);
+}
+
+.contact-input {
+  width: 100%;
+  border-radius: 22px;
+  border: 1px solid #d8e2f0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.95rem 1rem;
+  color: #142033;
+  outline: none;
+  transition: border-color 220ms ease, box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.contact-input::placeholder {
+  color: rgba(71, 85, 105, 0.48);
+}
+
+.contact-input:focus {
+  border-color: rgba(37, 99, 235, 0.7);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1),
+    0 16px 46px rgba(37, 99, 235, 0.12);
 }

@@ -1,51 +1,86 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { TECHS } from "../data/portfolio";
 
-const TECHS = [
-  "Java",
-  "Spring Boot",
-  "Microservices",
-  "Apache Kafka",
-  "Redis",
-  "PostgreSQL",
-  "Docker",
-  "Kubernetes",
-  "AWS",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "REST APIs",
-  "System Design",
-  "CI/CD",
-  "Terraform",
-];
-
-export default function TechMarquee() {
-  const doubled = [...TECHS, ...TECHS];
+function SkillTile({ label, index }) {
+  const featured = [
+    "LeetCode Knight",
+    "Java Backend",
+    "Frontend Development",
+    "Golang",
+  ].includes(label);
 
   return (
-    <div className="relative py-6 overflow-hidden border-y border-white/[0.04]">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
-
-      <motion.div
-        animate={{ x: [0, -50 * TECHS.length] }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="flex items-center gap-8 whitespace-nowrap"
-      >
-        {doubled.map((tech, i) => (
-          <span
-            key={`${tech}-${i}`}
-            className="text-sm text-neutral-600 font-light tracking-wide"
-          >
-            {tech}
+    <div
+      className={`marquee-tile grid h-[150px] w-[260px] shrink-0 place-items-center rounded-2xl border px-8 text-center shadow-[0_22px_60px_rgba(37,99,235,0.08)] backdrop-blur-sm sm:h-[190px] sm:w-[330px] md:h-[220px] md:w-[380px] ${
+        featured
+          ? "border-[#F59E0B]/30 bg-[#FFFBEB]/80"
+          : "border-[#D8E2F0] bg-white/70"
+      }`}
+      style={{
+        transform: `rotateY(${index % 2 === 0 ? -10 : 10}deg) rotateX(6deg)`,
+      }}
+    >
+      <div>
+        {featured && (
+          <span className="mb-4 inline-block rounded-full border border-[#FFD166]/30 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.3em] text-[#FFD166]">
+            Highlight
           </span>
-        ))}
-      </motion.div>
+        )}
+        <span className="block text-2xl font-black uppercase tracking-wider text-[#142033] md:text-4xl">
+          {label}
+        </span>
+      </div>
     </div>
+  );
+}
+
+export default function TechMarquee() {
+  const sectionRef = useRef(null);
+  const [offset, setOffset] = useState(0);
+  const rowOne = TECHS.slice(0, 9);
+  const rowTwo = TECHS.slice(9);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!sectionRef.current) return;
+      const top = sectionRef.current.offsetTop;
+      setOffset((window.scrollY - top + window.innerHeight) * 0.3);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#F7FAFF] pt-20 pb-10 sm:pt-24 md:pt-28"
+      style={{ perspective: "1100px" }}
+    >
+      <div
+        className="flex gap-3"
+        style={{
+          transform: `translateX(${offset - 220}px)`,
+          willChange: "transform",
+        }}
+      >
+        {[...rowOne, ...rowOne, ...rowOne].map((tech, i) => (
+          <SkillTile key={`${tech}-one-${i}`} label={tech} index={i} />
+        ))}
+      </div>
+
+      <div
+        className="mt-3 flex gap-3"
+        style={{
+          transform: `translateX(${-offset + 220}px)`,
+          willChange: "transform",
+        }}
+      >
+        {[...rowTwo, ...rowTwo, ...rowTwo].map((tech, i) => (
+          <SkillTile key={`${tech}-two-${i}`} label={tech} index={i + 1} />
+        ))}
+      </div>
+    </section>
   );
 }

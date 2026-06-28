@@ -1,16 +1,21 @@
-// ─── Personal Data ───────────────────────────────────────────────
-// Edit these constants to update your portfolio content.
-
 export const PERSONAL = {
   name: "Umar Firoz",
-  headline: "Software Engineer — Java, Spring Boot, Microservices, AWS",
-  // tagline: "I Build Backend Systems",
+  headline: "Full-Stack Software Engineer - Java, React.js & Golang | AWS",
+  currentRole: "Software Development Engineer at IBM India",
+  heroFirstName: "umar",
+  heroTagline:
+    "frontend-first software engineer building precise interfaces and scalable product systems",
+  aboutPitch:
+    "I design interfaces people can trust and engineer the backend systems that keep them fast. My work combines React, Java, Golang, AWS, and production discipline across products serving 10,000+ users.",
   intro:
-    "Software Engineer at IBM with 3+ years shipping Java microservices, event-driven architectures, and cloud-native platforms that serve 10,000+ enterprise users. I work across the full stack — Spring Boot and Kafka on the backend, React and Next.js on the frontend — and I've recently been building GenAI-powered developer tools. I like systems that are boring in production and interesting in design.",
+    "Full-stack Software Engineer with 3.5 years building secure, scalable systems end to end - from React.js interfaces to Java Spring Boot microservices to AWS infrastructure. I've built systems serving 10,000+ enterprise users, cut API latency by 40%, and improved p95 response time by roughly 30%.",
   email: "iiuumar28@gmail.com",
+  formEmail: "umar9897222@gmail.com",
   phone: "+91-8077038844",
-  location: "Hyderabad, India",
-  resumeUrl: "https://docs.google.com/document/d/1E7CpoL4rX9iemYW507L6Z0cXNcPJ8C_reEAA8NN3Rco/edit?usp=sharing",
+  location: "Hyderabad, Telangana",
+  resumeUrl:
+    "https://docs.google.com/document/d/1E7CpoL4rX9iemYW507L6Z0cXNcPJ8C_reEAA8NN3Rco/edit?usp=sharing",
+  portfolio: "https://umar-portfolio-woad.vercel.app",
   social: {
     linkedin: "https://linkedin.com/in/iumar28",
     github: "https://github.com/iumar28",
@@ -20,303 +25,169 @@ export const PERSONAL = {
 };
 
 export const CREDENTIALS = [
-  { label: "Experience", value: "3+ Years" },
+  { label: "Experience", value: "3.5 Years" },
   { label: "Current", value: "IBM India" },
   { label: "Scale", value: "10,000+ Users" },
-  { label: "Leetcode", value: "1600" },
-  { label: "Codeforces", value: "1100" },
+  { label: "LeetCode", value: "Knight 1897+" },
+  { label: "GATE", value: "AIR 346" },
+];
+
+export const HERO_BADGES = [
+  {
+    label: "LeetCode Knight",
+    value: "1897+",
+    tone: "#F59E0B",
+    position: "left-[4%] top-[24%] md:left-[10%] md:top-[34%]",
+  },
+  {
+    label: "Java Backend",
+    value: "Spring Boot",
+    tone: "#2563EB",
+    position: "right-[5%] top-[28%] md:right-[9%] md:top-[32%]",
+  },
+  {
+    label: "Frontend",
+    value: "React + 3D",
+    tone: "#14B8A6",
+    position: "left-[7%] bottom-[26%] md:left-[13%] md:bottom-[26%]",
+  },
+  {
+    label: "Golang",
+    value: "Microservices",
+    tone: "#16A34A",
+    position: "right-[6%] bottom-[25%] md:right-[13%] md:bottom-[28%]",
+  },
+];
+
+export const CORE_HIGHLIGHTS = [
+  {
+    title: "LeetCode Knight",
+    detail: "1897+ rating",
+    copy: "Algorithmic problem solving, 1,200+ solved problems, and contest discipline that transfers directly into debugging complex systems.",
+  },
+  {
+    title: "Java Backend",
+    detail: "Spring Boot + Microservices",
+    copy: "Secure backend services with Spring Security, OAuth2, JWT, RBAC, Hibernate/JPA, Redis, Kafka, and SQL optimization.",
+  },
+  {
+    title: "Frontend Development",
+    detail: "React + TypeScript + Motion",
+    copy: "Responsive React interfaces, operational dashboards, reusable components, form validation, and animated 3D frontend experiences.",
+  },
+  {
+    title: "Golang",
+    detail: "Distributed APIs",
+    copy: "Go microservices, MongoDB-backed APIs, retry logic, schema validation, and fault-tolerant integration patterns on AWS.",
+  },
 ];
 
 export const ABOUT = {
-  title: "About",
-  paragraphs: [
-    "I spend most of my time writing Java, thinking about system design, and trying to make distributed services behave. At IBM, I own backend microservices built on Spring Boot that handle authentication, authorization, and secure API communication for enterprise platforms used by thousands of people every day.",
-    "The part of the job I enjoy most is the architecture side — figuring out how to make things fast (Redis, async processing, query tuning), reliable (Kafka for event-driven messaging), and easy to deploy (Docker, Kubernetes, Jenkins pipelines on AWS). I've also built full-stack features with React and Next.js when the team needed someone who could ship end-to-end.",
-    "Before IBM, I was at a SaaS startup (Leadzen.ai) where I built backend services and a Chrome extension that shipped to production. On the side, I built AutoStack — a developer tool that generates and deploys full-stack apps automatically — and sold it to a US client. More recently, I've been working with OpenAI APIs to build GenAI-assisted developer workflows, because I think the engineers who learn to work with LLMs now will have a serious edge in the next few years.",
-    "When I'm not building, I'm usually solving problems on LeetCode or Codeforces. Competitive programming taught me how to think under pressure, and that skill shows up every time I debug a production issue at 2 AM.",
-  ],
+  title: "About me",
+  paragraph:
+    "I am a frontend-first full-stack Software Engineer at IBM India. I build clean React interfaces, secure Java Spring Boot services, and Golang microservices with a strong eye for performance, system design, and trust. My work has supported 10,000+ enterprise users, reduced API latency by 40%, improved p95 response time by roughly 30%, and is backed by LeetCode Knight problem-solving discipline.",
 };
 
-export const SKILLS = [
+export const SERVICES = [
   {
-    category: "Backend & API Development",
-    items: [
-      "Java",
-      "Spring Boot",
-      "Spring MVC",
-      "Spring Security",
-      "Hibernate / JPA",
-      "JDBC",
-      "REST APIs",
-      "GraphQL (familiar)",
-      "Node.js",
-      "Python",
-    ],
+    title: "3D Frontend Experiences",
+    description:
+      "Interactive React interfaces with motion, depth, reusable UI systems, responsive layouts, validation, and production-grade REST API integration.",
   },
   {
-    category: "Frontend & UI",
-    items: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "Tailwind CSS",
-      "HTML5 / CSS3",
-      "Vue.js (familiar)",
-    ],
+    title: "Full-Stack Product Engineering",
+    description:
+      "End-to-end feature delivery with React.js, TypeScript, Java Spring Boot, secure auth, SQL databases, and component-based architecture.",
   },
   {
-    category: "Architecture & System Design",
-    items: [
-      "Microservices Architecture",
-      "Distributed Systems",
-      "Event-Driven Architecture",
-      "System Design & HLD",
-      "API Design & Versioning",
-      "Design Patterns",
-      "Domain-Driven Design (familiar)",
-    ],
+    title: "Backend & Microservices",
+    description:
+      "Scalable Java and Golang services with Kafka, Redis, OAuth2, JWT, RBAC, retry logic, circuit breakers, and fault-tolerant workflows.",
   },
   {
-    category: "Data, Caching & Messaging",
-    items: [
-      "PostgreSQL",
-      "MySQL",
-      "MongoDB",
-      "Redis",
-      "Apache Kafka",
-      "RabbitMQ",
-    ],
+    title: "Cloud & DevOps on AWS",
+    description:
+      "Cloud-native deployment with AWS, Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, Linux, and practical CI/CD pipelines.",
   },
   {
-    category: "Cloud, DevOps & Infrastructure",
-    items: [
-      "AWS (EC2, S3, Lambda, RDS, CloudWatch)",
-      "Docker",
-      "Kubernetes",
-      "Jenkins",
-      "Terraform",
-      "GitHub Actions",
-      "CI/CD Pipelines",
-      "Infrastructure as Code",
-      "Linux / Bash",
-    ],
-  },
-  {
-    category: "AI, GenAI & Developer Tooling",
-    items: [
-      "OpenAI APIs",
-      "LLM Integration",
-      "Prompt Engineering",
-      "Agentic Workflows",
-      "AI-Assisted Development",
-      "GitHub Copilot",
-    ],
-  },
-  {
-    category: "Testing, Observability & Practices",
-    items: [
-      "JUnit",
-      "Integration Testing",
-      "Postman",
-      "Prometheus",
-      "Grafana",
-      "SonarQube",
-      "Distributed Tracing",
-      "Jira",
-      "Git",
-      "Agile / Scrum",
-    ],
-  },
-];
-
-export const EXPERIENCE = [
-  {
-    role: "Software Engineer",
-    company: "IBM India",
-    location: "Hyderabad",
-    period: "Dec 2023 — Present",
-    type: "Enterprise",
-    highlights: [
-      "Own the backend for Java microservices built on Spring Boot and Spring Security that power authentication and authorization for 10,000+ enterprise users across distributed services.",
-      "Designed and implemented RBAC, OAuth2, and JWT-based auth flows — handling secure token exchange, role hierarchies, and service-to-service trust across the microservices mesh.",
-      "Cut API response times by reworking hot paths with Redis caching, rewriting slow SQL queries, and introducing async processing where synchronous calls were bottlenecking throughput.",
-      "Built event-driven data pipelines using Apache Kafka to decouple tightly-bound services, improving reliability and making the system easier to scale and debug independently.",
-      "Set up and maintain CI/CD pipelines with Jenkins, Docker, and Kubernetes — every merge to main triggers automated builds, tests, and containerized deployments to AWS.",
-      "Shipped React and Next.js dashboard features when the frontend team needed extra hands — implemented code splitting, lazy loading, and API integration that improved page load times.",
-      "Helped build out the team's observability stack with Prometheus and Grafana — set up dashboards, alerting rules, and SLO tracking that caught production issues before users noticed.",
-    ],
-    stack: [
-      "Java",
-      "Spring Boot",
-      "Spring Security",
-      "Kafka",
-      "Redis",
-      "PostgreSQL",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-      "Jenkins",
-      "React",
-      "Next.js",
-      "Prometheus",
-      "Grafana",
-    ],
-  },
-  {
-    role: "SDE I",
-    company: "Leadzen.ai (Hexus — Interactive Demo SaaS)",
-    location: "Remote",
-    period: "Jan — Dec 2023",
-    type: "SaaS Startup",
-    highlights: [
-      "Built backend services from scratch using Node.js, Express, and MongoDB — designed the API layer and data models for an interactive product demo platform used by SaaS sales teams.",
-      "Developed a Chrome extension that captured real-time browser events and turned them into replayable interactive demos — this became a core feature of the product.",
-      "Set up Docker-based CI/CD with GitHub Actions that automated testing, building, and deploying across staging and production environments, cutting manual release work significantly.",
-      "Worked directly with the product and design teams in an Agile setup — scoping features, estimating effort, and shipping weekly without breaking things.",
-    ],
-    stack: [
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Docker",
-      "GitHub Actions",
-      "Chrome APIs",
-      "REST APIs",
-    ],
-  },
-  {
-    role: "Software Engineer Intern",
-    company: "Glabbr Technologies (Knyo Cloud)",
-    location: "Pune — Remote",
-    period: "Oct 2021 — Apr 2022",
-    type: "Startup",
-    highlights: [
-      "Built backend APIs for a product data management platform used by manufacturers in automotive and pharma — handling part details, supplier data, and design file versioning.",
-      "Worked with Go, MongoDB, and AWS services (S3, CloudFront, API Gateway) to build microservices that needed to be fast, reliable, and cost-efficient at scale.",
-    ],
-    stack: ["Go", "MongoDB", "AWS", "Microservices", "REST APIs", "Postman"],
+    title: "GenAI Product Workflows",
+    description:
+      "RAG pipelines, LangChain classifiers, LLM API integrations, prompt engineering, and AI-assisted tooling wired into real backend workflows.",
   },
 ];
 
 export const PROJECTS = [
   {
     title: "AutoStack",
-    subtitle: "Full-Stack Project Generation & Deployment Platform",
+    category: "Full-Stack Platform",
     description:
-      "I built this because I was tired of spending two days setting up every new project. AutoStack lets you pick a tech stack, and it generates a production-ready full-stack app, pushes it to GitHub, builds a Docker image, and deploys it to AWS — all automatically. I ended up selling it to a US-based client who uses it for their internal team onboarding.",
-    highlights: [
-      "Spring Boot backend with React frontend — the whole thing eats its own cooking",
-      "Terraform scripts handle AWS provisioning, so there's zero manual infra work",
-      "Docker containerization is baked into the pipeline from day one",
-      "Took manual project setup from ~2 days to under 10 minutes",
-    ],
-    stack: [
-      "Spring Boot",
-      "React",
-      "Terraform",
-      "AWS",
-      "Docker",
-      "JHipster",
-      "GitHub API",
-    ],
-    period: "Aug — Dec 2024",
-  },
-  {
-    title: "GenAI Developer Assistant",
-    subtitle: "LLM-Powered Workflow Automation for Engineers",
-    description:
-      "A developer tool that uses OpenAI's APIs to handle the repetitive parts of engineering — generating boilerplate code, drafting documentation, summarizing issues, and suggesting test cases. I built this partly to learn how agentic AI workflows actually work in practice, and partly because I wanted to stop writing the same CRUD scaffolding every sprint.",
-    highlights: [
-      "Prompt-engineered agentic workflows that chain LLM calls for multi-step tasks",
-      "Python backend with REST API layer that orchestrates model responses",
-      "Plugged into existing dev workflows — not a standalone toy, but a real productivity tool",
-    ],
-    stack: [
-      "Python",
-      "OpenAI APIs",
-      "REST APIs",
-      "Prompt Engineering",
-      "Agentic Workflows",
-      "LLM Integration",
-    ],
-    period: "Jan — Apr 2024",
+      "A Spring Boot and React.js platform that generates project scaffolding, REST API structures, Dockerfiles, and CI/CD pipelines using prompt-engineered LLM workflows.",
+    result: "Setup time from days to under 15 minutes",
+    period: "Aug 2024 - Dec 2024",
+    stack: ["Spring Boot", "React", "AWS", "Terraform", "Docker", "LLM"],
+    url: PERSONAL.social.github,
+    colors: ["#00D9FF", "#B600A8", "#BE4C00"],
   },
   {
     title: "Knyo Cloud",
-    subtitle: "Product Data Management for Manufacturers",
+    category: "Golang SaaS",
     description:
-      "A platform that gives manufacturing teams — automotive, pharma, industrial — a single place to manage product data, supplier relationships, and design files across distributed engineering teams. Think of it as version control, but for physical products.",
-    highlights: [
-      "Microservices backend in Go with MongoDB for flexible document storage",
-      "AWS infrastructure (S3, CloudFront, API Gateway) for globally distributed access",
-      "Designed for high availability and fault tolerance from the start",
-    ],
+      "Golang and MongoDB microservices on AWS for distributed product data management across automotive and pharmaceutical domains.",
+    result: "Fault-tolerant APIs built for horizontal scale",
+    period: "Oct 2021 - Apr 2022",
     stack: ["Go", "MongoDB", "AWS", "Microservices", "REST APIs"],
-    period: "Oct 2021 — Apr 2022",
+    url: PERSONAL.social.github,
+    colors: ["#B8F7D4", "#49B6FF", "#BBCCD7"],
   },
+  {
+    title: "GenAI Developer Assistant",
+    category: "AI Engineering",
+    description:
+      "A Python and FastAPI productivity tool using multi-step LLM workflows and a RAG layer over internal codebases for code review, debugging, and documentation.",
+    result: "Context-aware engineering automation",
+    period: "2024",
+    stack: ["Python", "FastAPI", "RAG", "LangChain", "LLM APIs"],
+    url: PERSONAL.social.github,
+    colors: ["#FFD166", "#B600A8", "#00D9FF"],
+  },
+];
+
+export const TECHS = [
+  "LeetCode Knight",
+  "Java Backend",
+  "Frontend Development",
+  "Golang",
+  "React.js",
+  "TypeScript",
+  "Framer Motion",
+  "Three.js",
+  "Tailwind CSS",
+  "Java",
+  "Spring Boot",
+  "Golang",
+  "Python",
+  "AWS",
+  "Kafka",
+  "Redis",
+  "PostgreSQL",
+  "Docker",
+  "Kubernetes",
+  "Terraform",
+  "LangChain",
+  "RAG",
 ];
 
 export const ACHIEVEMENTS = [
-  {
-    title: "GATE 2022",
-    detail: "All India Rank 346",
-    description:
-      "Ranked in the top 0.2% nationally in the Graduate Aptitude Test in Engineering (CS)",
-  },
-  {
-    title: "CodeChef",
-    detail: "Global Rank #321",
-    description:
-      "Competed against 200K+ programmers worldwide in algorithmic contests",
-  },
-  {
-    title: "AWS Certified",
-    detail: "Cloud Practitioner (CLF-C02)",
-    description:
-      "Validated cloud architecture and AWS services knowledge",
-  },
-  {
-    title: "LeetCode",
-    detail: "Rating 1600+",
-    description:
-      "Consistently rated in the top tier for data structures and algorithm problem solving",
-  },
-  {
-    title: "Codeforces",
-    detail: "Max Rating 1100",
-    description:
-      "Active competitive programmer solving algorithmic and graph-theory problems",
-  },
+  "GATE 2022 CS/IT Rank 346",
+  "LeetCode Knight, 1897+ rating",
+  "CodeChef Global Rank #321",
+  "Codeforces Rating 1100",
+  "1,200+ problems solved",
 ];
-
-export const CERTIFICATIONS = [
-  {
-    name: "AWS Cloud Practitioner (CLF-C02)",
-    url: "https://drive.google.com/file/d/1PjLGOhn36KziOODfaP-Md7fpq8c8aMu4/view",
-  },
-  {
-    name: "IBM Full Stack .NET Developer",
-    url: "https://drive.google.com/file/d/1slzVTc3G1Nyb_L0rxmcUXRIzPs3kFRxe/view",
-  },
-  {
-    name: "IBM z/OS Mainframe",
-    url: null,
-  },
-];
-
-export const EDUCATION = {
-  degree: "B.Tech Computer Science Engineering",
-  university: "IKG Punjab Technical University",
-  cgpa: "8.10 CGPA",
-  period: "2019 — 2023",
-};
 
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
+  { label: "Price", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];

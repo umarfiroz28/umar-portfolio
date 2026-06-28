@@ -1,82 +1,86 @@
 import { motion } from "framer-motion";
-import { Building2 } from "lucide-react";
-import { ABOUT, EDUCATION, EXPERIENCE } from "../data/portfolio";
+import { Code2, Cpu, Database, Server } from "lucide-react";
+import AnimatedText from "./AnimatedText";
+import ContactButton from "./ContactButton";
+import FadeIn from "./FadeIn";
+import { ABOUT, ACHIEVEMENTS, CREDENTIALS } from "../data/portfolio";
+
+const FLOATERS = [
+  { icon: Code2, label: "React", className: "left-4 top-20 md:left-16" },
+  { icon: Server, label: "Spring", className: "right-5 top-24 md:right-20" },
+  { icon: Cpu, label: "AWS", className: "bottom-32 left-6 md:left-24" },
+  { icon: Database, label: "Kafka", className: "bottom-28 right-6 md:right-28" },
+];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 sm:py-32">
-      <div className="max-w-4xl mx-auto px-6">
+    <section
+      id="about"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#F7FAFF] px-5 py-20 sm:px-8 md:px-10"
+      style={{ perspective: "1200px" }}
+    >
+      {FLOATERS.map(({ icon: Icon, label, className }, i) => (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          key={label}
+          className={`absolute hidden rounded-2xl border border-[#D8E2F0] bg-white/80 px-5 py-4 text-[#2563EB] shadow-[0_22px_50px_rgba(37,99,235,0.08)] backdrop-blur-sm sm:flex ${className}`}
+          initial={{ opacity: 0, y: 30, rotateY: i % 2 ? -25 : 25 }}
+          whileInView={{ opacity: 1, y: 0, rotateY: i % 2 ? -12 : 12 }}
+          animate={{ y: [0, -14, 0] }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{
+            opacity: { delay: i * 0.12, duration: 0.6 },
+            y: { duration: 4 + i, repeat: Infinity, ease: "easeInOut" },
+          }}
         >
-          <p className="text-xs uppercase tracking-[0.25em] text-cyan-400 mb-3">
-            About
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">
-            Engineer. Architect. Builder.
-          </h2>
+          <Icon size={22} />
+          <span className="ml-3 text-sm font-medium uppercase tracking-widest">
+            {label}
+          </span>
         </motion.div>
+      ))}
 
-        <div className="space-y-6">
-          {ABOUT.paragraphs.map((p, i) => (
-            <motion.p
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="text-neutral-400 leading-relaxed text-base sm:text-lg"
-            >
-              {p}
-            </motion.p>
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
+        <FadeIn delay={0} y={40}>
+          <h2 className="text-center font-black uppercase leading-none tracking-tight text-[#142033] [font-size:clamp(3rem,12vw,160px)]">
+            {ABOUT.title}
+          </h2>
+        </FadeIn>
+
+        <div
+          className="mt-10 max-w-[760px] font-medium leading-relaxed text-[#334155]"
+          style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" }}
+        >
+          <AnimatedText text={ABOUT.paragraph} className="text-center" />
+        </div>
+
+        <FadeIn delay={0.2} y={20} className="mt-10">
+          <ContactButton />
+        </FadeIn>
+
+        <div className="mt-14 grid w-full grid-cols-2 gap-3 md:grid-cols-5">
+          {CREDENTIALS.map((item, i) => (
+            <FadeIn key={item.label} delay={i * 0.06} y={20}>
+              <div className="about-stat rounded-2xl border border-[#D8E2F0] bg-white/82 p-4 text-left shadow-[0_18px_44px_rgba(37,99,235,0.07)]">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-[#64748B]">
+                  {item.label}
+                </p>
+                <p className="mt-2 text-lg font-black text-[#142033]">
+                  {item.value}
+                </p>
+              </div>
+            </FadeIn>
           ))}
         </div>
 
-        {/* Experience strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-12 flex flex-wrap gap-3"
-        >
-          {EXPERIENCE.map((exp) => (
-            <div
-              key={exp.company}
-              className="flex items-center gap-3 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-cyan-500/15 transition-all duration-500"
-            >
-              <Building2 size={15} className="text-cyan-400/60 flex-shrink-0" />
-              <div>
-                <p className="text-sm text-white font-medium leading-tight">
-                  {exp.role}
-                </p>
-                <p className="text-xs text-neutral-500 leading-tight mt-0.5">
-                  {exp.company} · {exp.period}
-                </p>
-              </div>
-            </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {ACHIEVEMENTS.map((item, i) => (
+            <FadeIn key={item} delay={0.2 + i * 0.04} y={12}>
+              <span className="rounded-full border border-[#D8E2F0] bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#475569] shadow-[0_10px_24px_rgba(37,99,235,0.06)]">
+                {item}
+              </span>
+            </FadeIn>
           ))}
-        </motion.div>
-
-        {/* Education card */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-12 p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]"
-        >
-          <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2">
-            Education
-          </p>
-          <p className="text-white font-medium">{EDUCATION.degree}</p>
-          <p className="text-neutral-400 text-sm mt-1">
-            {EDUCATION.university} · {EDUCATION.cgpa} · {EDUCATION.period}
-          </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

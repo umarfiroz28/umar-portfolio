@@ -1,29 +1,26 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import CredentialsStrip from "./components/CredentialsStrip";
 import TechMarquee from "./components/TechMarquee";
+import CoreSpotlight from "./components/CoreSpotlight";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white antialiased">
+    <div
+      className="min-h-screen bg-[#F7FAFF] text-[#142033] antialiased"
+      style={{ overflowX: "clip" }}
+    >
       <Navbar />
       <Hero />
-      <CredentialsStrip />
       <TechMarquee />
+      <CoreSpotlight />
       <About />
       <Skills />
-      <Experience />
       <Projects />
-      <Achievements />
       <Contact />
-      <Footer />
     </div>
   );
 }
