@@ -16,13 +16,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#061729] px-4 py-16 sm:px-8 sm:py-20 md:px-10"
+      className="relative overflow-hidden bg-[#070A0F] px-4 py-16 sm:px-8 sm:py-20 md:px-10"
       style={{ perspective: "1200px" }}
     >
       {FLOATERS.map(({ icon: Icon, label, className }, i) => (
         <motion.div
           key={label}
-          className={`absolute hidden rounded-2xl border border-sky-300/20 bg-[#08213A]/80 px-5 py-4 text-sky-300 shadow-[0_22px_50px_rgba(14,165,233,0.16)] backdrop-blur-sm sm:flex ${className}`}
+          className={`absolute hidden rounded-2xl border border-[#263142] bg-[#10151F]/80 px-5 py-4 text-[#4DA3FF] shadow-[0_22px_50px_rgba(0,0,0,0.2)] backdrop-blur-sm lg:flex ${className}`}
           initial={{ opacity: 0, y: 30, rotateY: i % 2 ? -25 : 25 }}
           whileInView={{ opacity: 1, y: 0, rotateY: i % 2 ? -12 : 12 }}
           animate={{ y: [0, -14, 0] }}
@@ -33,53 +33,57 @@ export default function About() {
           }}
         >
           <Icon size={22} />
-          <span className="ml-3 text-sm font-medium uppercase tracking-widest">
+          <span className="ml-3 text-sm font-semibold">
             {label}
           </span>
         </motion.div>
       ))}
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-        <FadeIn delay={0} y={40}>
-          <h2 className="text-center font-black uppercase leading-none tracking-normal text-sky-50 [font-size:clamp(2.8rem,12vw,160px)]">
-            {ABOUT.title}
-          </h2>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl min-w-0 gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+        <FadeIn delay={0} y={40} className="min-w-0">
+          <div className="min-w-0">
+            <p className="mb-3 font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D7B56D]">
+              About
+            </p>
+            <h2 className="max-w-full break-words font-display text-[clamp(2.15rem,9.5vw,3.75rem)] font-bold leading-tight tracking-normal text-[#F4F7FB]">
+              Product-minded engineering, from UI to infrastructure.
+            </h2>
+          </div>
         </FadeIn>
 
-        <div
-          className="mt-8 max-w-[760px] font-medium leading-relaxed text-sky-100/78 sm:mt-10"
-          style={{ fontSize: "clamp(1rem, 2vw, 1.35rem)" }}
-        >
-          <AnimatedText text={ABOUT.paragraph} className="text-center" />
-        </div>
+        <div className="min-w-0">
+          <div className="max-w-full text-base leading-8 text-[#A7B0C0] sm:text-lg">
+            <AnimatedText text={ABOUT.paragraph} />
+          </div>
 
-        <FadeIn delay={0.2} y={20} className="mt-10">
-          <ContactButton />
-        </FadeIn>
+          <FadeIn delay={0.2} y={20} className="mt-8">
+            <ContactButton />
+          </FadeIn>
 
-        <div className="mt-14 grid w-full grid-cols-2 gap-3 md:grid-cols-5">
-          {CREDENTIALS.map((item, i) => (
-            <FadeIn key={item.label} delay={i * 0.06} y={20}>
-              <div className="about-stat rounded-2xl border border-sky-300/20 bg-[#08213A]/82 p-4 text-left shadow-[0_18px_44px_rgba(14,165,233,0.14)]">
-                <p className="text-[11px] uppercase tracking-[0.2em] text-sky-200/58 sm:tracking-[0.24em]">
-                  {item.label}
-                </p>
-                <p className="mt-2 text-lg font-black text-sky-50">
-                  {item.value}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+          <div className="mt-10 grid min-w-0 grid-cols-1 gap-3 min-[430px]:grid-cols-2 sm:grid-cols-3">
+            {CREDENTIALS.map((item, i) => (
+              <FadeIn key={item.label} delay={i * 0.06} y={20}>
+                <div className="about-stat trust-surface rounded-2xl p-4 text-left">
+                  <p className="font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-[#6F7A8C]">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 font-display text-lg font-bold text-[#F4F7FB]">
+                    {item.value}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          {ACHIEVEMENTS.map((item, i) => (
-            <FadeIn key={item} delay={0.2 + i * 0.04} y={12}>
-              <span className="rounded-full border border-sky-300/18 bg-[#08213A]/70 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-sky-100/68 shadow-[0_10px_24px_rgba(14,165,233,0.12)]">
-                {item}
-              </span>
-            </FadeIn>
-          ))}
+          <div className="mt-5 flex flex-wrap gap-2">
+            {ACHIEVEMENTS.map((item, i) => (
+              <FadeIn key={item} delay={0.2 + i * 0.04} y={12}>
+                <span className="rounded-full border border-[#263142] bg-[#10151F]/70 px-4 py-2 text-xs font-semibold text-[#A7B0C0] shadow-[0_10px_24px_rgba(0,0,0,0.14)]">
+                  {item}
+                </span>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>

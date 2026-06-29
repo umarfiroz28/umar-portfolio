@@ -11,22 +11,22 @@ function SkillTile({ label, index }) {
 
   return (
     <div
-      className={`marquee-tile grid h-[150px] w-[260px] shrink-0 place-items-center rounded-2xl border px-8 text-center shadow-[0_22px_60px_rgba(37,99,235,0.08)] backdrop-blur-sm sm:h-[190px] sm:w-[330px] md:h-[220px] md:w-[380px] ${
+      className={`marquee-tile grid h-[82px] w-[190px] shrink-0 place-items-center rounded-2xl border px-5 text-center shadow-[0_18px_44px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:h-[96px] sm:w-[230px] ${
         featured
-          ? "border-amber-300/32 bg-amber-300/10"
-          : "border-sky-300/20 bg-[#08213A]/72"
+          ? "border-[#D7B56D]/38 bg-[#D7B56D]/10"
+          : "border-[#263142] bg-[#10151F]/72"
       }`}
       style={{
-        transform: `rotateY(${index % 2 === 0 ? -10 : 10}deg) rotateX(6deg)`,
+        transform: `rotateY(${index % 2 === 0 ? -5 : 5}deg) rotateX(3deg)`,
       }}
     >
       <div>
         {featured && (
-          <span className="mb-4 inline-block rounded-full border border-amber-300/30 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.3em] text-amber-200">
+          <span className="mb-2 inline-block rounded-full border border-[#D7B56D]/35 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-[#D7B56D]">
             Highlight
           </span>
         )}
-        <span className="block text-2xl font-black uppercase tracking-normal text-sky-50 sm:tracking-wider md:text-4xl">
+        <span className="block font-display text-base font-bold tracking-normal text-[#F4F7FB] sm:text-xl">
           {label}
         </span>
       </div>
@@ -55,13 +55,13 @@ export default function TechMarquee() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#061729] pb-10 pt-14 sm:pt-24 md:pt-28"
+      className="relative overflow-hidden bg-[#070A0F] py-10 sm:py-14"
       style={{ perspective: "1100px" }}
     >
       <div
         className="flex gap-3"
         style={{
-          transform: `translateX(${offset - 220}px)`,
+          transform: `translateX(${offset - 180}px)`,
           willChange: "transform",
         }}
       >
@@ -73,7 +73,7 @@ export default function TechMarquee() {
       <div
         className="mt-3 flex gap-3"
         style={{
-          transform: `translateX(${-offset + 220}px)`,
+          transform: `translateX(${-offset + 180}px)`,
           willChange: "transform",
         }}
       >

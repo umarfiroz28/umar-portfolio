@@ -9,8 +9,8 @@ export default function ThreeHeroScene() {
     if (!mount) return undefined;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.set(0, 0.45, 7.2);
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 0.35, 7.6);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -20,25 +20,25 @@ export default function ThreeHeroScene() {
     const root = new THREE.Group();
     scene.add(root);
 
-    const key = new THREE.DirectionalLight(0xffffff, 3.4);
+    const key = new THREE.DirectionalLight(0xffffff, 2.8);
     key.position.set(3, 4, 5);
     scene.add(key);
-    scene.add(new THREE.AmbientLight(0x9fd7ff, 1.2));
+    scene.add(new THREE.AmbientLight(0x9fd7ff, 0.92));
 
-    const cyanLight = new THREE.PointLight(0x00f5ff, 2.8, 10);
+    const cyanLight = new THREE.PointLight(0x4da3ff, 2.3, 10);
     cyanLight.position.set(-3.4, 1.2, 3);
     scene.add(cyanLight);
 
-    const pinkLight = new THREE.PointLight(0xff2ea6, 2.2, 10);
-    pinkLight.position.set(3.2, -0.4, 2.8);
-    scene.add(pinkLight);
+    const greenLight = new THREE.PointLight(0x42e8b4, 1.5, 10);
+    greenLight.position.set(3.2, -0.4, 2.8);
+    scene.add(greenLight);
 
     const goldLight = new THREE.PointLight(0xffd166, 1.8, 9);
     goldLight.position.set(0, 2.8, 2.5);
     scene.add(goldLight);
 
     const shellMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x182b63,
+      color: 0x171e2b,
       metalness: 0.62,
       roughness: 0.18,
       transmission: 0.12,
@@ -48,23 +48,23 @@ export default function ThreeHeroScene() {
     });
 
     const coreMaterial = new THREE.MeshStandardMaterial({
-      color: 0x00f5ff,
-      emissive: 0x00b8ff,
-      emissiveIntensity: 1.05,
+      color: 0x4da3ff,
+      emissive: 0x0c5db5,
+      emissiveIntensity: 0.82,
       metalness: 0.35,
       roughness: 0.28,
     });
 
     const accentMaterial = new THREE.MeshStandardMaterial({
-      color: 0xff2ea6,
-      emissive: 0xb600a8,
-      emissiveIntensity: 1.05,
+      color: 0x42e8b4,
+      emissive: 0x0c4f38,
+      emissiveIntensity: 0.72,
       metalness: 0.4,
       roughness: 0.24,
     });
 
     const knightMaterial = new THREE.MeshStandardMaterial({
-      color: 0xffd166,
+      color: 0xd7b56d,
       emissive: 0x553800,
       emissiveIntensity: 0.9,
       metalness: 0.45,
@@ -72,15 +72,15 @@ export default function ThreeHeroScene() {
     });
 
     const javaMaterial = new THREE.MeshStandardMaterial({
-      color: 0xff5c5c,
-      emissive: 0x591010,
-      emissiveIntensity: 0.8,
+      color: 0x8dc8ff,
+      emissive: 0x123a63,
+      emissiveIntensity: 0.62,
       metalness: 0.42,
       roughness: 0.24,
     });
 
     const goMaterial = new THREE.MeshStandardMaterial({
-      color: 0xb8f7d4,
+      color: 0x42e8b4,
       emissive: 0x0c4f38,
       emissiveIntensity: 0.75,
       metalness: 0.35,
@@ -88,7 +88,7 @@ export default function ThreeHeroScene() {
     });
 
     const core = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(1.45, 2),
+      new THREE.IcosahedronGeometry(1.35, 2),
       shellMaterial
     );
     root.add(core);
@@ -115,7 +115,7 @@ export default function ThreeHeroScene() {
     root.add(torusC);
 
     const wireMaterial = new THREE.LineBasicMaterial({
-      color: 0xbbccd7,
+        color: 0xa7b0c0,
       transparent: true,
       opacity: 0.28,
     });
@@ -127,7 +127,7 @@ export default function ThreeHeroScene() {
     root.add(wire);
 
     const particleGeometry = new THREE.BufferGeometry();
-    const particleCount = 160;
+    const particleCount = 110;
     const positions = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i += 1) {
       const radius = 3.2 + Math.random() * 3.2;
@@ -144,7 +144,7 @@ export default function ThreeHeroScene() {
     const particles = new THREE.Points(
       particleGeometry,
       new THREE.PointsMaterial({
-        color: 0x99f6ff,
+        color: 0x8dc8ff,
         size: 0.028,
         transparent: true,
         opacity: 0.86,
@@ -231,7 +231,7 @@ export default function ThreeHeroScene() {
     const animate = () => {
       const elapsed = clock.getElapsedTime();
       cyanLight.intensity = 2.4 + Math.sin(elapsed * 1.8) * 0.7;
-      pinkLight.intensity = 2 + Math.cos(elapsed * 1.4) * 0.55;
+      greenLight.intensity = 1.4 + Math.cos(elapsed * 1.4) * 0.35;
       goldLight.intensity = 1.6 + Math.sin(elapsed * 2.1) * 0.45;
       root.rotation.y += (pointer.x * 0.35 - root.rotation.y) * 0.025;
       root.rotation.x += (-pointer.y * 0.18 - root.rotation.x) * 0.025;

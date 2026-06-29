@@ -1,22 +1,20 @@
 export default function ContactButton({
   href = "#contact",
-  label = "Contact Me",
+  label = "Contact me",
   className = "",
 }) {
   return (
     <a
       href={href}
-      className={`inline-block rounded-full text-white font-semibold uppercase tracking-[0.16em] transition-transform duration-200 hover:scale-[1.03] px-7 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base sm:tracking-widest ${className}`}
+      className={`hero-cta-shine relative inline-flex min-h-12 items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-bold text-[#070A0F] transition duration-200 hover:-translate-y-1 sm:px-7 ${className}`}
       style={{
         background:
-          "linear-gradient(123deg, #0284C7 0%, #0EA5E9 38%, #06B6D4 72%, #38BDF8 100%)",
+          "linear-gradient(135deg, #F4F7FB 0%, #8DC8FF 52%, #4DA3FF 100%)",
         boxShadow:
-          "0 18px 44px rgba(37, 99, 235, 0.22), 4px 4px 14px rgba(255,255,255,0.25) inset",
-        outline: "1px solid rgba(255,255,255,0.8)",
-        outlineOffset: "-4px",
+          "0 18px 44px rgba(77, 163, 255, 0.22), inset 0 1px 0 rgba(255,255,255,0.62)",
       }}
     >
-      {label}
+      <span className="relative z-10">{label}</span>
     </a>
   );
 }

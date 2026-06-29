@@ -8,22 +8,22 @@ function ProjectVisual({ project, index }) {
   const [a, b, c] = project.colors;
 
   return (
-    <div className="grid min-h-[260px] grid-cols-1 gap-3 md:min-h-[300px] md:grid-cols-[0.4fr_0.6fr]">
+    <div className="grid min-h-[230px] grid-cols-1 gap-3 md:grid-cols-[0.38fr_0.62fr]">
       <div className="grid gap-3">
         <div
-          className="project-panel rounded-[24px] border border-sky-300/20 bg-[#08213A]/70 p-5 md:rounded-[28px]"
+          className="project-panel relative overflow-hidden rounded-2xl border border-[#263142] bg-[#10151F]/80 p-5"
           style={{
-            background: `linear-gradient(135deg, ${a}24, rgba(8,33,58,0.88))`,
+            background: `linear-gradient(135deg, ${a}18, rgba(16,21,31,0.88))`,
           }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-200/58 sm:tracking-[0.28em]">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#6F7A8C]">
             Stack
           </p>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap gap-2">
             {project.stack.slice(0, 4).map((tech) => (
               <span
                 key={tech}
-                className="rounded-full border border-sky-300/18 bg-[#061729]/54 px-3 py-1 text-xs font-medium text-sky-100/76"
+                className="rounded-full border border-[#263142] bg-[#070A0F]/54 px-3 py-1 text-xs font-semibold text-[#A7B0C0]"
               >
                 {tech}
               </span>
@@ -31,32 +31,32 @@ function ProjectVisual({ project, index }) {
           </div>
         </div>
         <div
-          className="project-panel rounded-[24px] border border-sky-300/20 bg-[#08213A]/70 p-5 md:rounded-[28px]"
+          className="project-panel relative overflow-hidden rounded-2xl border border-[#263142] bg-[#10151F]/80 p-5"
           style={{
-            background: `linear-gradient(135deg, ${b}24, rgba(8,33,58,0.88))`,
+            background: `linear-gradient(135deg, ${b}18, rgba(16,21,31,0.88))`,
           }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-200/58 sm:tracking-[0.28em]">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#6F7A8C]">
             Impact
           </p>
-          <p className="mt-5 text-lg font-black uppercase leading-tight text-sky-50 sm:text-xl">
+          <p className="mt-4 font-display text-lg font-bold leading-tight text-[#F4F7FB] sm:text-xl">
             {project.result}
           </p>
         </div>
       </div>
 
       <div
-        className="project-panel relative overflow-hidden rounded-[26px] border border-sky-300/20 bg-[#08213A]/70 p-5 sm:p-6 md:rounded-[32px]"
+        className="project-panel relative overflow-hidden rounded-2xl border border-[#263142] bg-[#10151F]/80 p-5 sm:p-6"
         style={{
-          background: `linear-gradient(135deg, ${c}24, rgba(8,33,58,0.9))`,
+          background: `linear-gradient(135deg, ${c}18, rgba(16,21,31,0.9))`,
         }}
       >
         <div
-          className="absolute inset-8 rounded-[32px] border border-sky-300/16 md:inset-10 md:rounded-[36px]"
+          className="absolute inset-8 rounded-[28px] border border-[#4DA3FF]/14 md:inset-10"
           style={{ transform: "rotateX(58deg) rotateZ(-28deg)" }}
         />
         <div
-          className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-3xl border border-white/20 sm:h-36 sm:w-36"
+          className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-3xl border border-white/12 sm:h-36 sm:w-36"
           style={{
             transform: `translate(-50%, -50%) rotateX(55deg) rotateY(${
               index % 2 ? -28 : 28
@@ -66,10 +66,10 @@ function ProjectVisual({ project, index }) {
           }}
         />
         <div className="relative z-10 flex h-full flex-col justify-between">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-200/58 sm:tracking-[0.32em]">
+          <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#6F7A8C]">
             {project.period}
           </p>
-          <p className="mt-16 max-w-sm text-sm leading-relaxed text-sky-100/76 sm:mt-0">
+          <p className="mt-16 max-w-sm text-sm leading-6 text-[#A7B0C0] sm:mt-0">
             {project.description}
           </p>
         </div>
@@ -88,20 +88,20 @@ function ProjectCard({ project, index }) {
   const rotateX = useTransform(scrollYProgress, [0, 1], [0, -5]);
 
   return (
-    <div ref={ref} className="h-auto pb-8 md:h-[85vh] md:pb-0">
+    <div ref={ref} className="h-auto pb-6 md:h-[76vh] md:pb-0">
       <motion.article
         style={{ scale, rotateX, transformPerspective: 1400 }}
-        className="flex min-h-0 flex-col justify-between rounded-[28px] border border-sky-300/20 bg-[#08213A]/86 p-4 shadow-[0_40px_120px_rgba(14,165,233,0.16)] backdrop-blur-md sm:rounded-[42px] sm:p-6 md:sticky md:top-20 md:min-h-[70vh] md:rounded-[60px] md:p-8"
+        className="trust-surface flex min-h-0 flex-col justify-between rounded-[24px] p-4 backdrop-blur-md sm:p-6 md:sticky md:top-24 md:min-h-[62vh] md:rounded-[30px] md:p-8"
       >
         <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
-          <div className="grid gap-1 md:grid-cols-[80px_180px_1fr] md:items-start md:gap-8">
-            <span className="text-sm font-black uppercase tracking-[0.24em] text-sky-200/48 sm:tracking-[0.28em]">
+          <div className="grid gap-2 md:grid-cols-[64px_150px_1fr] md:items-start md:gap-7">
+            <span className="font-mono text-sm font-bold uppercase tracking-[0.14em] text-[#6F7A8C]">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-200/58 sm:tracking-[0.28em]">
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#D7B56D]">
               {project.category}
             </span>
-            <h3 className="max-w-2xl text-3xl font-black uppercase leading-none tracking-normal text-sky-50 sm:text-5xl md:text-6xl">
+            <h3 className="max-w-2xl font-display text-3xl font-bold leading-tight tracking-normal text-[#F4F7FB] sm:text-5xl">
               {project.title}
             </h3>
           </div>
@@ -110,9 +110,9 @@ function ProjectCard({ project, index }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-sky-300/24 bg-sky-400/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-sky-200 transition hover:-translate-y-1 hover:bg-sky-400 hover:text-[#061729] sm:tracking-widest"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-[#263142] bg-[#171E2B] px-5 py-3 text-sm font-bold text-[#F4F7FB] transition hover:-translate-y-1 hover:border-[#4DA3FF] hover:text-[#4DA3FF]"
           >
-            Live Project
+            View work
             <ArrowUpRight size={15} />
           </a>
         </div>
@@ -127,12 +127,17 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-8 rounded-t-[32px] bg-[#061729] px-4 py-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="relative z-10 bg-[#070A0F] px-4 py-16 sm:px-8 sm:py-24 md:px-10"
     >
       <FadeIn y={40}>
-        <h2 className="mb-12 text-center font-black uppercase leading-none tracking-normal text-sky-50 [font-size:clamp(2.8rem,12vw,160px)] sm:mb-16">
-          Project
-        </h2>
+        <div className="mx-auto mb-10 max-w-7xl">
+          <p className="mb-3 font-mono text-xs font-bold uppercase tracking-[0.16em] text-[#D7B56D]">
+            Selected work
+          </p>
+          <h2 className="font-display text-4xl font-bold leading-tight tracking-normal text-[#F4F7FB] sm:text-5xl md:text-6xl">
+            Projects with clear outcomes.
+          </h2>
+        </div>
       </FadeIn>
 
       <div className="mx-auto max-w-7xl">
